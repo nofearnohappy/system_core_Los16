@@ -96,10 +96,11 @@ static Result<std::string> ComputeContextFromExecutable(const std::string& servi
                        << " to another SELinux domain defined. Have you configured your "
                           "service correctly? https://source.android.com/security/selinux/"
                           "device-policy#label_new_services_and_address_denials";
-        if (selinux_status_getenforce() > 0) {
+/*        if (selinux_status_getenforce() > 0) {
             return Error() << file_label_err.str();
         }
         LOG(ERROR) << file_label_err.str();
++*/
     }
     if (rc < 0) {
         return Error() << "Could not get process context";
